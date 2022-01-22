@@ -131,7 +131,13 @@ class Engine:
 
 		count = 0
 		bg_index = 0
+
+		MAX = input("Enter the max combinations: ")
+		MAX = int(MAX)
 		for comb in self.combinations:
+			if count == MAX:
+				break
+
 			print(f"Generated ({count}/{len(self.combinations)})")
 			self.surface.fill((255, 255, 255))
 			self.surface.blit(bg[bg_index], (0, 0))

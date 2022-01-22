@@ -84,7 +84,7 @@ class UI:
 	def __init__(self, width, height):
 		self.screen = pygame.display.set_mode((width, height))
 		self.width, self.height = self.screen.get_width(), self.screen.get_height()
-		self.surface = pygame.Surface((self.width - 100, height))
+		self.surface = pygame.Surface((WIDHT, HEIGHT))
 		self.objects = []
 
 		self.layer_tab = Layer(self.screen, 100, self.height)
@@ -114,7 +114,7 @@ class UI:
 				height = image.get_height()
 				ratio = width / height
 
-				new_height = 600
+				new_height = HEIGHT 
 				new_width = int(new_height * ratio)
 
 				image = pygame.transform.scale(image, (new_width, new_height))
@@ -199,6 +199,8 @@ if __name__ == "__main__":
 		print("USAGE: nft [input_folder] [output_folder]")
 		quit()
 
+	WIDTH = 1860
+	HEIGHT = 1500
 	pygame.init()
 	app = UI(800, 600)
 	app.run()
